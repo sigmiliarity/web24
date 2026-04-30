@@ -50,7 +50,8 @@ const FFMpegManager = {
             const { FFmpeg } = FFmpegWASM;
             this.instance = new FFmpeg();
             await this.instance.load({
-                coreURL: 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.js',
+                coreURL: 'fcore.js',
+                wasmURL: 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.wasm'
             });
             console.log('FFmpeg WASM loaded');
         }
