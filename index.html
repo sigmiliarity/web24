@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Σ Music | Amazon</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="ffmpeg.min.js"></script>
+    <style>
+        :root {
+            --accent: #FF9500;
+            --accent-glow: rgba(255, 149, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="visualizer"></canvas>
+
+    <div class="container">
+        <h1>Σ Music <span style="color:var(--accent)">AMAZON</span></h1>
+        <input type="text" id="search" placeholder="Search Amazon Music..." autocomplete="off">
+        <div id="status" style="font-size: 0.8rem; color: var(--dim); margin: 10px 0;">Ready.</div>
+        <div id="results"></div>
+    </div>
+
+    <!-- ALBUM VIEWER MODAL -->
+    <div id="viewer" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.9); z-index:1000; overflow-y:auto;">
+        <div style="max-width:800px; margin:40px auto; padding:20px;">
+            <button onclick="closeViewer()" style="position:absolute; top:20px; right:20px; background:none; border:none; color:#fff; font-size:28px; cursor:pointer;">✕</button>
+            <div id="viewer-data"></div>
+        </div>
+    </div>
+
+    <!-- SEARCH/BROWSE VIEW -->
+    <div id="browse-view">
+        <!-- Results grid populated by script.js -->
+    </div>
+
+    <!-- MINI PLAYER -->
+    <div id="min-player">
+        <div class="min-inner">
+            <div class="min-controls">
+                <button class="min-btn" id="m-prev">Prev</button>
+                <button class="min-btn" id="m-play" style="color:#fff; font-size: 14px;">PLAY</button>
+                <button class="min-btn" id="m-next">Next</button>
+                <button class="min-btn" id="m-download" title="Download current track">⬇</button>
+            </div>
+            <div class="min-seek-wrap">
+                <span class="min-time" id="m-current">0:00</span>
+                <div class="min-seek" id="m-seek"><div class="min-progress" id="m-bar"></div></div>
+                <span class="min-time" id="m-total">0:00</span>
+            </div>
+        </div>
+    </div>
+
+    <audio id="min-audio-main"></audio>
+    <audio id="min-audio-preload" preload="auto" style="display:none"></audio>
+
+    <!-- Load API then scripts -->
+    <script src="amazon-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
