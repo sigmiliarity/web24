@@ -2,7 +2,7 @@
  * Music App with Amazon Music API & FFmpeg WASM Decryption
  */
 
-const PROXY = "https://api.codetabs.com/v1/proxy?quest=";
+const PROXY = "https://corx.venipa.workers.dev/?url=";
 const API_BASE = "https://t2tunes.site/api/amazon-music/media-from-asin?country=US&codec=opus&asin=";
 
 // ============================================================
