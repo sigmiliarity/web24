@@ -4,7 +4,7 @@
  */
 
 const AmazonAPI = (() => {
-    const CODETABS_PROXY = "https://api.codetabs.com/v1/proxy?quest=";
+    const CODETABS_PROXY = "https://corx.venipa.workers.dev/?url=";
     const SEARCH_API = "https://t2tunes.site/api/amazon-music/search";
 
     /**
